@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>반응형 웹 레이아웃 예제1</title>
+        <style>
+            * { margin: 0; padding: 0; }
+            body { background-color: #e3f2fd; }
+            #wrap { width: 1200px; margin: 0 auto; }
+            .header { width: 100%; height: 100px; background: #b2defe; }
+            .nav  { width: 100%; height: 400px; background: #7ecbfd; }
+            
+            .sect1 { overflow: hidden; }
+            .sect1 .arti1-1 { float: left; width: 30%; height: 500px; background: #43b5fc; }
+            .sect1 .arti1-2 { float: left; width: 70%; height: 250px; background: #00a5fb; }
+            .sect1 .arti1-3 { float: left; width: 70%; height: 250px; background: #0096fa; }
+            
+            .sect2 { width: 100%; }
+            .sect2 .arti2-1 { float: left; width: 33.3333%; height: 300px; background: #0088ec; }
+            .sect2 .arti2-2 { float: left; width: 33.3333%; height: 300px; background: #0076d9; }
+            .sect2 .arti2-3 { float: left; width: 33.3333%; height: 300px; background: #0064c6; }
+            
+            .sect3 { overflow: hidden; padding: 5%; background: #00a6fc; }
+            .sect3 > div { margin: 1%; float: left; width: 23%; height: 150px; border-radius: 20px; background: #0076d9; }
+            .footer { width: 100%; height: 70px; background: #43b5fc; }
+
+
+            /* 화면 너비 0 ~ 1200px */
+            @media (max-width: 1240px) {
+                #wrap { width: 100%; }
+                .sect2 .arti2-1 { width: 50%; }
+                .sect2 .arti2-2 { width: 50%; }
+                .sect2 .arti2-3 { display: none; }
+                
+                .sect3 > div { width: 31.3333%; }
+            }
+
+            /* 화면 너비 0 ~ 768px */
+            @media (max-width: 768px) {
+                .sect2 .arti2-1 { width: 100%; }
+                .sect2 .arti2-2 { width: 100%; }
+            }
+
+            /* 화면 너비 0 ~ 500px */
+            @media (max-width: 500px) {
+                .sect1 .arti1-1 { width: 100%; height: 200px; }
+                .sect1 .arti1-2 { width: 100%; height: 200px; }
+                .sect1 .arti1-3 { width: 100%; height: 200px; }
+
+                .sect3 > div { width: 98%;  }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header class="header"></header>
+            <nav class="nav"></nav>
+            <section class="sect1">
+                <article class="arti1-1"></article>
+                <article class="arti1-2"></article>
+                <article class="arti1-3"></article>
+            </section>
+            <section class="sect2">
+                <article class="arti2-1"></article>
+                <article class="arti2-2"></article>
+                <article class="arti2-3"></article>
+            </section>
+            <section class="sect3">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+            <footer class="footer"></footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>반응형 웹 레이아웃 예제1</title>
+        <style>
+            * { margin: 0; padding: 0; }
+            body { background-color: #e3f2fd; }
+            #wrap { width: 100%; margin: 0 auto; }
+            .header { width: 100%; height: 100px; background: #81d4fa; }
+            .nav { float: left; width: 30%; height: 600px; background: #4fc3f7;}
+            .arti1 { float: left;width: 70%; height: 200px; background: #29b6f6;}
+            .arti2 { float: left;width: 70%; height: 200px; background: #03a9f4;}
+            .arti3 { float: left;width: 70%; height: 200px; background: #039be5;}
+            .footer { clear: both; width: 100%; height: 100px; background: #0288d1;}
+            
+            /* 화면 너비 0 ~ 1200px */
+            @media (max-width: 1240px) {
+                #wrap { width: 100%; }
+                .arti1 { height: 450px; }
+                .arti2 { height: 450px; }
+                .arti3 { width: 100%; height: 300px; }
+            }
+
+            /* 화면 너비 0 ~ 768px */
+            @media (max-width: 768px) {
+                .nav { width: 100%; height: 100px; }
+                .arti1 { width: 50%; height: 300px; }
+                .arti2 { width: 50%; height: 300px; }
+            }
+
+            /* 화면 너비 0 ~ 500px */
+            @media (max-width: 500px) {
+                .arti1 { width: 100%; }
+                .arti2 { width: 100%; }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header class="header"></header>
+            <nav class="nav"></nav>
+            <section class="arti1"></section>
+            <section class="arti2"></section>
+            <section class="arti3"></section>
+            <footer class="footer"></footer>
+        </div>
+    </body>
+</html>
